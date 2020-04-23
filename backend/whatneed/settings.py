@@ -25,7 +25,7 @@ SECRET_KEY = 'xdw1&hq3rj6hv_)h*)zizh12hcti#-@py%+0p^6ctj32qaqo5d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['52.79.161.164']
+ALLOWED_HOSTS = ['52.79.161.164','i02b101.p.ssafy.io']
 
 
 # Application definition
@@ -158,5 +158,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # AUTH_USER_MODEL = 'accounts.User'
