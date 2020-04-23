@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/git,venv,react,django,python,pycharm,virtualenv,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=git,venv,react,django,python,pycharm,virtualenv,visualstudiocode
+# Created by https://www.gitignore.io/api/git,venv,django,python,pycharm,virtualenv,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=git,venv,django,python,pycharm,virtualenv,visualstudiocode
 
 ### Django ###
 *.log
@@ -269,21 +269,6 @@ fabric.properties
 
 # Pyre type checker
 
-### react ###
-.DS_*
-logs
-**/*.backup.*
-**/*.back.*
-
-node_modules
-bower_components
-
-*.sublime*
-
-psd
-thumb
-sketch
-
 ### venv ###
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
@@ -312,4 +297,4 @@ pip-selfcheck.json
 # Ignore all local history of files
 .history
 
-# End of https://www.gitignore.io/api/git,venv,react,django,python,pycharm,virtualenv,visualstudiocode
+# End of https://www.gitignore.io/api/git,venv,django,python,pycharm,virtualenv,visualstudiocode
