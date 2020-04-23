@@ -4,7 +4,7 @@ from django.conf import settings
 from foods.models import Food
 # Create your models here.
 
-class User(AbstractUser):
+class User(models.Model):
     name = models.CharField(max_length=255)
     gender = models.CharField(max_length=10)
     age = models.IntegerField(null=True)
@@ -13,7 +13,7 @@ class User(AbstractUser):
     encoding_path = models.TextField(null=True)
 
 class Order(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     time = models.DateTimeField(auto_now_add=True)
 
 class Order_list(models.Model):

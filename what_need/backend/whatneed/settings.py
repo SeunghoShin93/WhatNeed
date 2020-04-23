@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     'foods.apps.FoodsConfig',
     'accounts.apps.AccountsConfig',
     'corsheaders',
+    'rest_framework',
+    'drf_yasg',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -157,4 +159,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'accounts.User'
+# AUTH_USER_MODEL = 'accounts.User'

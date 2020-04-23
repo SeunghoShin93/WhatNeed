@@ -1,0 +1,7 @@
+{% block content %}
+  {% for food in foods %}
+    {{food.name}}
+    <h1 style='text-align:center'>메인 화면, 이 곳에서 카메라 실행 화면으로 이동합니다..</h1>
+    <h2 style='text-align:center'> <a href="/camera">[촬영하기]</a></h2>
+  {% endfor %}
+{% endblock  %}
