@@ -9,7 +9,6 @@ import numpy as np
 import cv2
 from PIL import Image
 import pymysql
-import matplotlib.pyplot as plt
 
 postfix_list = ["%03d"%time for time in range(0,1000)]
 
@@ -23,22 +22,38 @@ def postfix_generator():
 
 postfix_gen = postfix_generator()
 
-# 0 return되면 오류, 1 return 정상. 2 이상인 경우도 있기는 함 그러나 1일때가 정상적인 작동
 def face_count(img_path):
     img = fr.load_image_file(img_path)
-    print(img)
     face_images = fr.face_encodings(img)
-    print(face_images)
     return len(face_images)
 
-def face_save(img_path, encoding_path = "encoding"):
-    #img_path에 있는 파일에서 얼굴을 인코딩을 한 후.
-    #그 값을 저장한다.
+def face_encoding_update(img_path, user_id, encoding_dict ,encoding_path = "encoding"):
+
     if not os.path.exists(encoding_path):
         os.mkdir(encoding_path)
     img = fr.load_image_file(img_path)
     face_encoding = fr.face_encodings(img)[0]
-    #동시에 파일이 생성되면 꼬이기 때문에
+    pre_face_encoding = encoding_dict[user_id]
+    face_encoding = 0.7*pre_face_encoding + 0.3*face_encoding
+    encoding_dict[user_id] = face_encoding
+    
+    file_name = user_id +".json"
+    file_path = os.path.join(encoding_path, file_name)
+    file_data = {}
+    file_data['id'] = user_id
+    file_data['face_encoding'] = face_encoding
+    with open(file_path, 'w', encoding="utf-8") as file:
+        json.dump(file_data, file, indent='\t' )
+    return encoding_dict
+
+def face_save(img_path, encoding_path = "encoding"):
+
+
+    if not os.path.exists(encoding_path):
+        os.mkdir(encoding_path)
+    img = fr.load_image_file(img_path)
+    face_encoding = fr.face_encodings(img)[0]
+
     file_id = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time())) + next(postfix_gen)
     file_name = file_id +".json"
     file_data = {}
@@ -114,44 +129,39 @@ def face_webcam_save(img_cnt = 20, encoding_path = "encoding"):
         json.dump(file_data, file, indent='\t' )
     return file_id,  file_name
 
-encoding_dict_list = []
+encoding_dict = {}
 
 def load_list(encoding_path = "encoding"):
     print("load files")
     encoding_path_list = glob.glob(os.path.join(encoding_path,"*.json"))
+    ret = {}
     for encoding_path in encoding_path_list:
         tmp_dict = {}
         with open(encoding_path, 'r', encoding='utf-8') as file:
-            tmp_dict = json.load(file);
+            tmp_dict = json.load(file)
             tmp_dict['face_encoding'] = np.array(tmp_dict['face_encoding'])
-            encoding_dict_list.append(tmp_dict)
-    return encoding_dict_list
+            ret[tmp_dict['id']] = tmp_dict['face_encoding']
+    return ret
 
-# 사진마다 인코딩 값 다 다름
-# encoding에 사진들의 평균값이 저장되어 있음.
-#여기서 다 읽어 오는가?
-#아님 save를 하면서 리스트에 추가시키는가?
-
-def face_detect(img_path, encoding_dict_list, tolerance=0.6):
-    # img_path : 찍은 뒤 저장한 사진의 경로
-    # encoding_dict_list : load_list 메서드의 return값
+def face_detect(img_path, encoding_dict ,  tolerance = 0.6):
     target_img = fr.load_image_file(img_path)
     target_img_encoding = fr.face_encodings(target_img)[0]
     encoding_list = []
-    # print(encoding_list)
+    
+    #print(encoding_list)
 
-    # face_count()가 1일때, 아래의 반복문 작동 (face_image가 잘 인식되는지)
-    for compare_encoding_dict in encoding_dict_list:
-        compare_encoding = compare_encoding_dict['face_encoding']
+    for face_id in encoding_dict:
+        compare_encoding = encoding_dict[face_id]
         #print(compare_encoding_dict['face_encoding'].shape)
         #print("add candidate")
-        compare_encoding_dict['dist'] = np.linalg.norm(compare_encoding_dict['face_encoding']- target_img_encoding)
+        compare_encoding_dict = {}
+        compare_encoding_dict['id'] = face_id
+        compare_encoding_dict['dist'] = np.linalg.norm(compare_encoding- target_img_encoding)
         if compare_encoding_dict['dist'] <= tolerance:
             #print(compare_encoding_dict['dist'])
             encoding_list.append(compare_encoding_dict)
         #encoding_id_list.append(compare_encoding_dict)
-    
-    #만약 전처리에서 나온 얼굴이 없을때 unknown을 리턴.
+
     if len(encoding_list) == 0:
         return -1
 
@@ -168,12 +178,15 @@ def face_detect(img_path, encoding_dict_list, tolerance=0.6):
         return -1
 
 if __name__ == "__main__":
-    #python face.py --img_path 1.jpg 로 사용하면 된다.
+
+    #print(os.curdir)
+    #face_webcam_save(2, "../encoding")
+    
     parser = argparse.ArgumentParser()
     parser.add_argument("--img_path", help="set image_path", type=str, default="")
     args = parser.parse_args()
-    img_path = args.img_path
-    encoding_dict_list = load_list()
+    img_path = "./20200428041845002.jpg"
+    encoding_dict_list = load_list(encoding_path="backend/encoding")
     res_list = face_detect(img_path, encoding_dict_list)
     print(res_list)
     

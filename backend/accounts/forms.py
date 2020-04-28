@@ -10,4 +10,8 @@ class OrderForm(forms.ModelForm):
 class OrderListForm(forms.ModelForm):
     class Meta:
         model = Order_list
-        fields = ('order', 'food', 'count')
+        fields = ('order', 'coffee', 'count')
+
+class UploadFileForm(forms.Form):
+    title = forms.CharField(max_length=50)
+    file = forms.FileField()       
