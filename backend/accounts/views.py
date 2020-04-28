@@ -22,6 +22,7 @@ from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from PIL import Image
 from django.core import serializers
+import ujson
 
 def main(request):
     # foods = Food.objects.filter()
@@ -94,12 +95,50 @@ def face_detection(request):
         if user:
             user_list.append(user)
     
+    user = user_list[0]
     user_list = serializers.serialize('json', user_list)
-    print(user_list)
-    #print(return_list)
-    return HttpResponse(user_list, content_type="text/json-comment-filtered")
-    
 
+    ##
+ 
+    ##
+  
+    return HttpResponse(user_list, content_type="text/json-comment-filtered")
+
+
+    
+@csrf_exempt
+def user_info(request):
+    print('request_body : ',request.body)
+    #print('request)
+    print('request_post :', request.POST.get('pk'))
+    user_pk = request.POST.get('pk')
+    user = User.objects.filter(pk=user_pk).first()
+    
+    all_coffees = Coffee.objects.all()
+    recent_coffees = []
+    recent_orders = Order.objects.filter(user=user).order_by('-time')[0:4] # orders (not order_list)
+    print(recent_coffees)
+    for order in recent_orders:
+        for o in Order_list.objects.filter(order=order):
+            print(o.coffee.name)
+            recent_coffees.append(o.coffee)
+            if len(recent_coffees) >= 4:
+                break
+        if len(recent_coffees) >= 4:
+            break
+    all_coffees = serializers.serialize('json', all_coffees, ensure_ascii=False)
+    recent_coffees = serializers.serialize('json', recent_coffees, ensure_ascii=False)
+    
+    context = {
+    }
+    
+    context['all_coffees'] = all_coffees
+    context['recent_coffees'] = recent_coffees
+    
+    context = json.dumps(context, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+
+    return HttpResponse(context.replace("\\", ""))  
+         
 
 
 def recent_food(request, user_pk):

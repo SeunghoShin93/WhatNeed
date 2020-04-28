@@ -12,12 +12,12 @@ class User(AbstractUser):
     encoding_path = models.TextField(null=True)
 
 class Order(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='order')
     time = models.DateTimeField(auto_now_add=True)
 
 class Order_list(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    coffee = models.ForeignKey(Coffee, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='list')
+    coffee = models.ForeignKey(Coffee, on_delete=models.CASCADE, related_name='coffee_list')
     count = models.IntegerField()
 
 class Test(models.Model):

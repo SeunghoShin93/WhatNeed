@@ -1,0 +1,30 @@
+/* @font-face {
+  font-family: jua;
+  src:local(※), url('/src/assets/fonts/Jua-Regular.ttf');
+} */
+@font-face {
+  font-family: 'jua';
+  src:local('jua'), url(/src/assets/fonts/BMJUA_ttf) format("truetype");
+}
+
+h2{
+  font-family: jua;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'jua',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', 
+    monospace;
+}
+
+.root{
+  overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%;
+}

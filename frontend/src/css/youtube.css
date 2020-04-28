@@ -1,0 +1,72 @@
+
+  .youtubevideowrapperdiv1-1 {
+position: relative;
+padding-bottom: 50%; /* 영상비율에 따른 수치 */
+padding-top: 25px;
+height: 0;
+}
+  
+  .youtubevideowrapperdiv4-3 {
+position: relative;
+padding-bottom: 75%; /* 영상비율에 따른 수치 */
+padding-top: 25px;
+height: 0;
+}
+
+  
+  .youtubevideowrapperdiv16-9blind {
+position: relative;
+padding-bottom: 83%; /* 영상비율에 따른 수치 */
+padding-top: 0%;
+height: 0;    
+}
+
+  .youtubevideowrapperdiv16-9 {
+position: relative;
+padding-bottom: 56.25%; /* 영상비율에 따른 수치 */
+padding-top: 3%;
+height: 0;
+}
+  
+.youtubevideowrapperdiv17-9 {
+position: relative;
+padding-bottom: 52.94%; /* 영상비율에 따른 수치 */
+padding-top: 25px;
+height: 0;
+}
+
+.youtubevideowrapperdiv18-9 {
+position: relative;
+padding-bottom: 50%; /* 영상비율에 따른 수치 */
+padding-top: 25px;
+height: 0;
+}
+
+
+.youtubevideowrapperdiv19-9 {
+position: relative;
+padding-bottom: 47.37%; /* 영상비율에 따른 수치 */
+padding-top: 25px;
+height: 0;  
+}
+
+
+.youtubevideowrapperdiv20-9 {
+position: relative;
+padding-bottom: 45%; /* 영상비율에 따른 수치 */
+padding-top: 25px;
+height: 0;
+}
+
+.youtubevideowrapperdiv iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+.youtubevideowrapper 
+{max-width: 900px;
+  margin:auto;
+  }

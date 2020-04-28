@@ -9,5 +9,6 @@ app_name='accounts'
 urlpatterns = [
     path('', views.main, name='main'),
     path('face_detection/', views.face_detection, name='face_detection'),
+    path('getItem/', views.user_info, name='user_info'),
     path('recent_food/', views.recent_food, name='recent_food'),
 ]
