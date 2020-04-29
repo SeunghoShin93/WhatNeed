@@ -21,6 +21,8 @@ import RecentMenu from '../components/Tabs/Recent/RecentMenu';
 import update from 'react-addons-update';
 import RecommendMenu from "../components/Tabs/Recommend/RecommendMenu";
 
+import store from "../store";
+
 const useStyles = makeStyles((theme) => ({
   root:{
     marginLeft : "50px"
@@ -308,17 +310,28 @@ class Layout extends React.Component {
   }
 
   render() {
+    const {userInfo, setUserInfo} = store.getState().userInfo;
+    const {items, setItmes} = store.getState().items;
     const { index, cart } = this.state;
+
+    //alert(store.getState().userInfo);
+    //console.log("누고?");
     return (
-      <div
+        <div
         position="relative"
         style={{ marginTop: "50px", marginBottom: "100px", minHeight: "500px" }}
-      >
+        >
         <Typography
           style={{ fontWeight: "400", fontSize: "large", marginBottom: "20px" }}
-        >
+          >
           환영합니다, 'user' 님
         </Typography>
+
+        {
+            console.log(this.state.items)}
+
+            {console.log(this.state.userInfo)
+        }
 
         <div>
           <BottomNavigation

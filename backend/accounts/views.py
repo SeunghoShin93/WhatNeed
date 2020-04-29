@@ -4,25 +4,21 @@ from foods.models import Food
 from .models import User, Order, Order_list
 from . import face1 as face
 from . import recommend1 as recommend
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
-from .serializers import AccountsSerializer, OrderListSerializer, OrderSerializer
-from drf_yasg.views import get_schema_view
-from .forms import OrderForm, OrderListForm
 from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
 import os
 import json
 import django.conf
 import matplotlib.pyplot as plt
 import base64
-from foods.forms import CoffeeForm
 from foods.models import Coffee
 import random
 from django.contrib import messages 
 from django.views.decorators.csrf import csrf_exempt
 from PIL import Image
 from django.core import serializers
-import ujson
+from itertools import chain
+from django.utils.safestring import mark_safe
+from datetime import datetime
 
 def main(request):
     # foods = Food.objects.filter()
@@ -89,7 +85,7 @@ def face_detection(request):
         return []
     
     user_list = []
-    # user_list = [User.objects.filter(key=r).first() for r in return_list]
+
     for r in return_list:
         user = User.objects.filter(key=r).first()
         if user:
@@ -97,11 +93,11 @@ def face_detection(request):
     
     user = user_list[0]
     user_list = serializers.serialize('json', user_list)
+    
+    #print(recommend.recommed_list_django(user))
 
-    ##
- 
-    ##
-  
+    
+    #print(type(user_list))
     return HttpResponse(user_list, content_type="text/json-comment-filtered")
 
 
@@ -115,31 +111,33 @@ def user_info(request):
     user = User.objects.filter(pk=user_pk).first()
     
     all_coffees = Coffee.objects.all()
-    recent_coffees = []
+    recent_coffees = {}
+    #favorite_coffees = sorted([])
     recent_orders = Order.objects.filter(user=user).order_by('-time')[0:4] # orders (not order_list)
+    
     print(recent_coffees)
     for order in recent_orders:
         for o in Order_list.objects.filter(order=order):
-            print(o.coffee.name)
-            recent_coffees.append(o.coffee)
-            if len(recent_coffees) >= 4:
-                break
-        if len(recent_coffees) >= 4:
-            break
-    all_coffees = serializers.serialize('json', all_coffees, ensure_ascii=False)
-    recent_coffees = serializers.serialize('json', recent_coffees, ensure_ascii=False)
+            if len(recent_coffees) < 4 or len(favorite_coffees) < 4:
+              if not recent_coffees.get(o.coffee.name) and len(recent_coffees) < 4:
+                recent_coffees[o.coffee.name] = order.time.strftime("%Y/%m/%d")
+                #print(order)
+              #favorite_coffees[o.coffee.name] = favorite_coffees.get(o.coffee.name, 0) + o.count
+    
+    print(recent_coffees)
+    #recent_coffees = serializers.serialize('json', recent_coffees, ensure_ascii=False) # id time
+    #favorite_coffees = serializer.serialize('json', favorite_coffees, ensure_ascii=False) 
+    recommend_coffees = [idx for idx, data in recommend.recommend_list_django(user)][0:2] # only id
     
     context = {
+      'recent_coffees': recent_coffees,
+      'favortite_coffees' : favorite_coffees,
+      'recommend_coffees': recommend_coffees
     }
     
-    context['all_coffees'] = all_coffees
-    context['recent_coffees'] = recent_coffees
-    
-    context = json.dumps(context, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+    context = json.dumps(context, ensure_ascii=False)
 
-    return HttpResponse(context.replace("\\", ""))  
-         
-
+    return HttpResponse(context, content_type='application/json')
 
 def recent_food(request, user_pk):
     user = User.objects.filter(pk=user_pk).first()
@@ -148,7 +146,10 @@ def recent_food(request, user_pk):
     context = {'recent_foods': recent_foods}
     return render(request, 'accounts/recent_food.html', context)
 
-
+@csrf_exempt
+def buy_coffee(request):
+    print(request)
+    print(request.body)
 def all_food(request, user_pk):
     all_foods = Food.objects.all()
 
