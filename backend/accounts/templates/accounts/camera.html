@@ -1,0 +1,12 @@
+{% block content %}
+  <meta charset="utf-8">
+  <h1 style='text-align:center'>capture complete!</h1>
+  <br>
+  {{ this_user }}
+  <br>
+  recommend food is
+  {% for food in recommend_foods %}
+     <b>{{food}} </b>
+  {% endfor %}
+  
+{% endblock  %}
