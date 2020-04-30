@@ -155,7 +155,7 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = False
-CLIENT_DIR = os.path.join(os.path.join(BASE_DIR, '..'), 'client')
+CLIENT_DIR = os.path.join(os.path.join(BASE_DIR, '..'), 'frontend')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -168,7 +168,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATICFILES_DIRS = [
    # os.path.join(BASE_DIR, "static"),
    # os.path.join(BASE_DIR, "frontend/static/"),
-   os.path.join(CLIENT_DIR, 'dist/client'),
+   os.path.join(CLIENT_DIR, 'build/static/'),
 ]
 
 STATICFILES_STORAGE = '/home/ubuntu/WhatNeed/s02p23b101/frontend/build/static/'
