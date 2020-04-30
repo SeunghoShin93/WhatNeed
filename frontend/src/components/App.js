@@ -7,10 +7,16 @@ import Menu from "../pages/Menu";
 import Capture from "../pages/Capture";
 import '../index.css';
 import Home from "../pages/Home";
+import OrderResult from "../pages/OrderResult";
+import CheckInfo from "../pages/CheckInfo";
 
 const theme = createMuiTheme({
+    bottomnavigation : {
+      fontSize : 'x-large'
+    },
     drawerWidth: 320,
     typography: {
+      fontSize : 'x-large',
       fontFamily: 'jua',
       button: {
         fontFamily: "jua"
@@ -42,9 +48,8 @@ class App extends React.Component {
                   <Route path="/Main" component={Main} />
                   <Route path="/Menu" component={Menu} />
                   <Route path="/Capture" component={Capture} />
-                  {/*}
-                  <Redirect to="/not-found" />
-            {*/}
+                  <Route path="/Result" component={OrderResult}/>
+                  <Route path="/Check" component={CheckInfo}/>
                 </Switch>
               </BrowserRouter>
             </MuiThemeProvider>

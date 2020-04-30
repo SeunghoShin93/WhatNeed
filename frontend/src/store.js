@@ -9,8 +9,13 @@ export default createStore(function(state, action){
     }else if(action.type === 'user'){
         return {...state, userInfo:action.userInfo}
     }else if(action.type === 'items'){
-        return {...state, userInfo:action.items}
+        return {...state, items:action.items}
+    }else if(action.type === 'clear'){
+        state = undefined;
+    }else if(action.type === 'usersList'){
+        return {...state, usersList:action.usersList}
     }
+
 
     return state;
 }, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())

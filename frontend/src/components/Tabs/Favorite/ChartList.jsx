@@ -6,6 +6,16 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class ChartList2 extends React.Component {
     render() {
+		const {favoriteInfo} = this.props;
+
+		const favordata = [];
+		console.log("favoriteInfo in chart : ", favoriteInfo);
+		for(var i=0; i<favoriteInfo.length; i++){
+			favordata.push({"y": favoriteInfo[i].count, "label" : favoriteInfo[i].name})
+		}
+
+		console.log("favordata : ", favordata);
+
         const options = {
 			animationEnabled: true,
 			theme: "light1",
@@ -13,14 +23,7 @@ class ChartList2 extends React.Component {
 				type: "pie",
 				indexLabel: "{label}: {y}%",		
 				startAngle: -90,
-				dataPoints: [
-					{ y: 20, label: "아이스 아메리카노" },
-					{ y: 24, label: "쉬폰 케잌" },
-					{ y: 20, label: "카페모카" },
-					{ y: 14, label: "마끼야또" },
-					{ y: 12, label: "모닝빵" },
-					{ y: 10, label: "죽빵" }	
-				]
+				dataPoints: favordata,
 			}]
 		}
         return(

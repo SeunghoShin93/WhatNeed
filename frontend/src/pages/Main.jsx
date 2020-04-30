@@ -3,10 +3,6 @@ import Header from '../layout/Header';
 import Layout from '../layout/Layout';
 import Footer from '../layout/Footer'
 
-
-
-
-
 class Main extends React.Component {
     render(){
         return(

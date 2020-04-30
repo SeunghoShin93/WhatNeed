@@ -35,80 +35,13 @@ const useStyles = theme => ({
     titleBar: {
         background:
         'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+        fontSize: "x-large"
     },
     });
 
-const userData = [
-    {id : 0, name : '나이트로 바닐라 크림', price : 4000, count : 2},
-    {id : 1, name : '돌체 콜드 브루', price : 5000, count : 1},
-    {id : 2, name : '제주 비자림 콜드 브루', price : 8000, count : 6},
-    {id : 3, name : '코코넛 화이트 콜드 브루', price : 7000, count : 4},
-    {id : 4, name : '콜드 브루', price : 2000, count : 0}
-]
 
-const categoryData = [
-    {id : 0, name : '블렌디드'},
-    {id : 1, name : '에스프레소'},
-    {id : 2, name : '콜드 브루 커피'},
-    {id : 3, name : '티'},
-    {id : 4, name : '프라푸치노'},
-]
 
-const purchaseInfo = [{
-    user_id : 2,
-    menu_info : [
-        {
-            id : 2,
-            count : 3
-        },
-        {
-            id : 1,
-            count : 4
-        },
-        {
-            id : 5,
-            count : 1
-        },
-    ]
-}]
 
-// const menuData = [
-//     {
-//         id : 0,
-//         category : '블렌디드',
-//         menu : [
-//             {id : 0, name : '딸기 요거트 블렌디드', price : 4000, image: '/coffee/블렌디드/딸기 요거트 블렌디드.jpg'},
-//             {id : 1, name : '망고 바나나 블렌디드', price : 5000, image: '/coffee/블렌디드/망고 바나나 블렌디드.jpg'},
-//       ],
-//     },
-//     {
-//         id : 1,
-//         category : '에스프레소',
-//         menu : [
-//             {id : 2, name : '나이트로 바닐라 크림', price : 4000, image: '/coffee/콜드 브루 커피/나이트로 바닐라 크림.jpg'},
-//             {id : 3, name : '돌체 콜드 브루', price : 5000, image: '/coffee/콜드 브루 커피/돌체 콜드 브루.jpg'},
-//             {id : 4, name : '제주 비자림 콜드 브루', price : 8000, image: '/coffee/콜드 브루 커피/제주 비자림 콜드 브루.jpg'},
-//             {id : 5, name : '코코넛 화이트 콜드 브루', price : 7000, image: '/coffee/콜드 브루 커피/코코넛 화이트 콜드 브루.jpg'},
-//             {id : 6, name : '콜드 브루', price : 2000, image: '/coffee/콜드 브루 커피/콜드 브루.jpg'}
-//         ],
-//     },
-//     {
-//         id : 2,
-//         category : '콜드 브루 커피',
-//         menu : [
-//             {id : 2, name : '나이트로 바닐라 크림', price : 4000, image: '/coffee/콜드 브루 커피/나이트로 바닐라 크림.jpg'},
-//             {id : 3, name : '돌체 콜드 브루', price : 5000, image: '/coffee/콜드 브루 커피/돌체 콜드 브루.jpg'},
-//             {id : 4, name : '제주 비자림 콜드 브루', price : 8000, image: '/coffee/콜드 브루 커피/제주 비자림 콜드 브루.jpg'},
-//             {id : 5, name : '코코넛 화이트 콜드 브루', price : 7000, image: '/coffee/콜드 브루 커피/코코넛 화이트 콜드 브루.jpg'},
-//             {id : 6, name : '콜드 브루', price : 2000, image: '/coffee/콜드 브루 커피/콜드 브루.jpg'} 
-//         ],
-//     }
-// ]
-
-// const tileData = [
-//     {name : '제주 비자림 콜드 브루', price : 8000, image: img03},
-//     {name : '코코넛 화이트 콜드 브루', price : 7000, image: img04}
-// ]
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -151,12 +84,6 @@ class AllMenu extends React.Component {
         this.setState({index: newValue});
     };
 
-    onClickMenu = (clickMenuId, name, price, event) => {
-        console.log('클릭된 음식 1번인자 : ', clickMenuId);
-        console.log('클릭된 음식 2번인자 : ', name);
-        console.log('클릭된 음식 3번인자 : ', price);
-        console.log('클릭된 음식 4번인자 : ', event);
-    }
 
     render (){
         const {classes, menuData} = this.props;

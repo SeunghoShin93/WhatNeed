@@ -32,9 +32,6 @@ ALLOWED_HOSTS = ['52.79.161.164','i02b101.p.ssafy.io', '52.79.161.164:8000']
 INSTALLED_APPS = [
     'foods.apps.FoodsConfig',
     'accounts.apps.AccountsConfig',
-    'corsheaders',
-    'rest_framework',
-    'drf_yasg',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,7 +56,7 @@ ROOT_URLCONF = 'whatneed.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR, 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,6 +71,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'whatneed.wsgi.application'
 
+STATICFILES_DIRS = [
+
+    os.path.join(BASE_DIR, 'frontend', 'build', 'static')
+]
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -99,6 +100,9 @@ DATABASES = {
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
+CORS_ORIGIN_WHITELIST = (
+    'localhost:3000/',
+)
 CORS_ALLOW_METHODS = (
      'DELETE',
      'GET',
@@ -142,23 +146,33 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
-
+USE_TZ = False
+CLIENT_DIR = os.path.join(os.path.join(BASE_DIR, '..'), 'client')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
 STATIC_URL = '/static/'
+#STATIC_URL = '/home/ubuntu/WhatNeed/s02p23b101/frontend/build/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = ''
+#STATIC_ROOT = '/home/ubuntu/WhatNeed/s02p23b101/frontend/build/static/'
+
+STATICFILES_DIRS = [
+   # os.path.join(BASE_DIR, "static"),
+   # os.path.join(BASE_DIR, "frontend/static/"),
+   os.path.join(CLIENT_DIR, 'dist/client'),
+]
+
+STATICFILES_STORAGE = '/home/ubuntu/WhatNeed/s02p23b101/frontend/build/static/'
 AUTH_USER_MODEL = 'accounts.User'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

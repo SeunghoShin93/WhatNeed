@@ -5,10 +5,31 @@
 @font-face {
   font-family: 'jua';
   src:local('jua'), url(/src/assets/fonts/BMJUA_ttf) format("truetype");
+  font-size: x-large;
 }
+
+
 
 h2{
   font-family: jua;
+}
+
+div {
+  font-size: large;
+}
+
+table {
+  font-size: x-large;
+}
+
+button {
+  width: auto;
+  margin-left: 30px;
+}
+
+span{
+  font-size: x-large;
+  width: 120%;
 }
 
 body {

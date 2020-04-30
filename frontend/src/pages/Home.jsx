@@ -92,10 +92,13 @@ class Home extends Component {
                 ></div>
 
                 {/* //제목 가리는 하단 div */}
-                <div style={{ pointerEvents: "none" }}>
+                <div 
+                // style={{ pointerEvents: "none" }}
+                >
                   <iframe
                     id="iframe_youtube"
-                    src="https://www.youtube.com/embed/mKB-Tsih3Zo?version=2&loop=1&playlist=ELUxkF-ZH9Q&controls=0&rel=0&autoplay=1&modestbranding=1"
+                    // src="https://www.youtube.com/embed/ELUxkF-ZH9Q?version=2&loop=1&playlist=ELUxkF-ZH9Q&controls=0&rel=0&autoplay=1&modestbranding=1"
+                    src="https://www.youtube.com/embed/mKB-Tsih3Zo?version=2&loop=1&playlist=mKB-Tsih3Zo&controls=0&rel=0&autoplay=1&modestbranding=1"
                     frameBorder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; loop;"
                     allowFullScreen
