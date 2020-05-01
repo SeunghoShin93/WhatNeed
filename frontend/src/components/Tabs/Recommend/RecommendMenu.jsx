@@ -40,7 +40,7 @@ const useStyles = theme => ({
 class RecommendMenu extends React.Component {
     render() {
         const {classes, menuData, recommendInfo} = this.props;
-        const base_url = '/coffee_ori/';
+        const base_url = '/public/coffee_ori/';
 
         console.log("recommendInfo : ", recommendInfo);
         return (

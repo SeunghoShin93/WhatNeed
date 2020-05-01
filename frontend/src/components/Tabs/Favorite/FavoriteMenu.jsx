@@ -38,7 +38,7 @@ const useStyles = theme => ({
 class FavoriteMenu extends React.Component {
     render() {
       const {classes, menuData, favoriteInfo} = this.props;
-      const base_url = '/coffee_ori/';
+      const base_url = '/public/coffee_ori/';
       const resultTile = favoriteInfo.slice(0,3);
         return (
           <div className={classes.root}>

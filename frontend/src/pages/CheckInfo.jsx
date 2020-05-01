@@ -26,7 +26,7 @@ class CheckInfo extends Component {
     
   
     getItem(userInfo){
-        const url = 'http://52.79.161.164:8001/getItem/';
+        const url = '/whatneed/getItem/';
         let formData = new FormData();
         formData.append('pk', userInfo);
     

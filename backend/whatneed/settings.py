@@ -76,6 +76,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend', 'build', 'static')
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -155,24 +160,25 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = False
-CLIENT_DIR = os.path.join(os.path.join(BASE_DIR, '..'), 'frontend')
+#CLIENT_DIR = os.path.join(os.path.join(BASE_DIR, '..'))
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 STATIC_URL = '/static/'
 #STATIC_URL = '/home/ubuntu/WhatNeed/s02p23b101/frontend/build/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 #STATIC_ROOT = ''
 #STATIC_ROOT = '/home/ubuntu/WhatNeed/s02p23b101/frontend/build/static/'
 
 STATICFILES_DIRS = [
    # os.path.join(BASE_DIR, "static"),
    # os.path.join(BASE_DIR, "frontend/static/"),
-   os.path.join(CLIENT_DIR, 'build/static/'),
+   #os.path.join(CLIENT_DIR, 'build/static'),
 ]
 
-STATICFILES_STORAGE = '/home/ubuntu/WhatNeed/s02p23b101/frontend/build/static/'
+#STATICFILES_STORAGE = '/home/ubuntu/WhatNeed/s02p23b101/frontend/build/static/'
 AUTH_USER_MODEL = 'accounts.User'
+AUTHENTICATION_BACKENDS = ('apps.apployment_site.auth.CustomAuth',)
 
 #MEDIA_URL = '/media/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
