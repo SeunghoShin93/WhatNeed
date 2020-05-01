@@ -1,13 +1,10 @@
-# 인공지능 프로젝트
+# What Need (왔니?) 
 
-SSAFY 대전 2기 B101팀
+## AI Face_Recognition Kiosk App 
 
-팀원: 손경수, 박상원, 배상화, 신승호, 이은규, 조현욱
+### SSAFY 대전 2기 B101
 
+#### 팀원: 손경수, 박상원, 배상화, 신승호, 이은규, 조현욱
 
-
-
-
-
-
+Checkout our intro video ! -  https://www.youtube.com/watch?v=ugdcQXdHYhw 
 
