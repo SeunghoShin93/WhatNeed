@@ -36,7 +36,7 @@ const useStyles = theme => ({
 
 class RecentMenu extends React.Component {
     render() {
-        const base_url = '/coffee_ori/';
+        const base_url = '/public/coffee_ori/';
         const {classes, menuData, recentInfo} = this.props;
         return (
           <div className={classes.root}>

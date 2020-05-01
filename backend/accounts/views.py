@@ -13,7 +13,7 @@ from django.shortcuts import render
 
 def index(request):
     print(os.path.realpath(__file__))
-    return render(request, 'frontend/build/index.html')
+    return render(request, 'accounts/index.html')
 
 @csrf_exempt
 def face_detection(request):
@@ -45,7 +45,6 @@ def face_detection(request):
     return HttpResponse(user_list, content_type="text/json-comment-filtered")
 
 
-    
 @csrf_exempt
 def user_info(request):
 

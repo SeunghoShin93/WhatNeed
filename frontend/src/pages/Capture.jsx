@@ -38,7 +38,7 @@ class Capture extends Component {
     }
     
     fileUpload(img){
-      const url = 'http://52.79.161.164:8001/face_detection/';
+      const url = '/whatneed/face_detection/';
       const formData = img;
   
       const config = {

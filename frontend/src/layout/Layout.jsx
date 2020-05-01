@@ -109,81 +109,81 @@ const menuData = [
       id : 0,
       category : '브루드 커피',
       menu : [
-        {id : 1, name : '아이스 커피', price : 3000, image: '/coffee_ori/아이스 커피.jpg'},
-        {id : 2, name : '오늘의 커피', price : 3800, image: '/coffee_ori/오늘의 커피.jpg'},
+        {id : 1, name : '아이스 커피', price : 3000, image: '/public/coffee_ori/아이스 커피.jpg'},
+        {id : 2, name : '오늘의 커피', price : 3800, image: '/public/coffee_ori/오늘의 커피.jpg'},
     ],
   },
   {
       id : 1,
       category : '블렌디드',
       menu : [
-          {id : 3, name : '딸기 요거트 블렌디드', price : 4000, image: '/coffee_ori/딸기 요거트 블렌디드.jpg'},
-          {id : 4, name : '망고 바나나 블렌디드', price : 4000, image: '/coffee_ori/망고 바나나 블렌디드.jpg'},
-          {id : 5, name : '망고 패션 후르츠 블렌디드', price : 5000, image: '/coffee_ori/망고 패션후르츠 블렌디드.jpg'},
-          {id : 6, name : '익스트림 티 블렌디드', price : 4000, image: '/coffee_ori/익스트림 티 블렌디드.jpg'},
-          {id : 7, name : '자몽 셔벗 블렌디드', price : 4000, image: '/coffee_ori/자몽 셔벗 블렌디드.jpg'},
-          {id : 9, name : '제주 레드 빈 블렌디드', price : 5000, image: '/coffee_ori/제주 레드 빈 블렌디드.jpg'},
-          {id : 8, name : '제주 한라봉 블랙 티 블렌디드', price : 5000, image: '/coffee_ori/제주 한라봉 블랙 티 블렌디드.jpg'},
+          {id : 3, name : '딸기 요거트 블렌디드', price : 4000, image: '/public/coffee_ori/딸기 요거트 블렌디드.jpg'},
+          {id : 4, name : '망고 바나나 블렌디드', price : 4000, image: '/public/coffee_ori/망고 바나나 블렌디드.jpg'},
+          {id : 5, name : '망고 패션 후르츠 블렌디드', price : 5000, image: '/public/coffee_ori/망고 패션후르츠 블렌디드.jpg'},
+          {id : 6, name : '익스트림 티 블렌디드', price : 4000, image: '/public/coffee_ori/익스트림 티 블렌디드.jpg'},
+          {id : 7, name : '자몽 셔벗 블렌디드', price : 4000, image: '/public/coffee_ori/자몽 셔벗 블렌디드.jpg'},
+          {id : 9, name : '제주 레드 빈 블렌디드', price : 5000, image: '/public/coffee_ori/제주 레드 빈 블렌디드.jpg'},
+          {id : 8, name : '제주 한라봉 블랙 티 블렌디드', price : 5000, image: '/public/coffee_ori/제주 한라봉 블랙 티 블렌디드.jpg'},
         ],
   },
   {
       id : 2,
       category : '에스프레소',
       menu : [
-          {id : 10, name : '라벤더 카페 브레베', price : 4000, image: '/coffee_ori/라벤더 카페 브레베.jpg'},
-          {id : 11, name : '럼 샷 코르타도', price : 6000, image: '/coffee_ori/럼 샷 코르타도.jpg'},
-          {id : 12, name : '바닐라 스타벅스 더블 샷', price : 7000, image: '/coffee_ori/바닐라 스타벅스 더블 샷.jpg'},
-          {id : 13, name : '바닐라 플랫 화이트', price : 5000, image: '/coffee_ori/바닐라 플랫 화이트.jpg'},
-          {id : 14, name : '스타벅스 돌체 라떼', price : 5000, image: '/coffee_ori/스타벅스 돌체 라떼.jpg'},
-          {id : 15, name : '블론드 리스트레토 마키아또', price : 6000, image: '/coffee_ori/블론드 리스트레토 마키아또.jpg'},
-          {id : 16, name : '블론드 에스프레소 토닉', price : 5000, image: '/coffee_ori/블론드 에스프레소 토닉.jpg'},
-          {id : 17, name : '블론드 카라멜 클라우드 마키아또', price : 6000, image: '/coffee_ori/블론드 카라멜 클라우드 마키아또.jpg'},
-          {id : 18, name : '블론드 코코아 클라우드 마키아또', price : 6000, image: '/coffee_ori/블론드 코코아 클라우드 마키아또.jpg'},
+          {id : 10, name : '라벤더 카페 브레베', price : 4000, image: '/public/coffee_ori/라벤더 카페 브레베.jpg'},
+          {id : 11, name : '럼 샷 코르타도', price : 6000, image: '/public/coffee_ori/럼 샷 코르타도.jpg'},
+          {id : 12, name : '바닐라 스타벅스 더블 샷', price : 7000, image: '/public/coffee_ori/바닐라 스타벅스 더블 샷.jpg'},
+          {id : 13, name : '바닐라 플랫 화이트', price : 5000, image: '/public/coffee_ori/바닐라 플랫 화이트.jpg'},
+          {id : 14, name : '스타벅스 돌체 라떼', price : 5000, image: '/public/coffee_ori/스타벅스 돌체 라떼.jpg'},
+          {id : 15, name : '블론드 리스트레토 마키아또', price : 6000, image: '/public/coffee_ori/블론드 리스트레토 마키아또.jpg'},
+          {id : 16, name : '블론드 에스프레소 토닉', price : 5000, image: '/public/coffee_ori/블론드 에스프레소 토닉.jpg'},
+          {id : 17, name : '블론드 카라멜 클라우드 마키아또', price : 6000, image: '/public/coffee_ori/블론드 카라멜 클라우드 마키아또.jpg'},
+          {id : 18, name : '블론드 코코아 클라우드 마키아또', price : 6000, image: '/public/coffee_ori/블론드 코코아 클라우드 마키아또.jpg'},
         ],
   },
   {
       id : 3,
       category : '콜드 브루 커피',
       menu : [
-          {id : 27, name : '나이트로 바닐라 크림', price : 4000, image: '/coffee_ori/나이트로 바닐라 크림.jpg'},
-          {id : 28, name : '나이트로 쇼콜라 클라우드', price : 5000, image: '/coffee_ori/나이트로 쇼콜라 클라우드.jpg'},
-          {id : 29, name : '나이트로 콜드 브루', price : 8000, image: '/coffee_ori/나이트로 콜드 브루.jpg'},
-          {id : 30, name : '돌체 콜드 브루', price : 7000, image: '/coffee_ori/돌체 콜드 브루.jpg'},
-          {id : 31, name : '바닐라 크림 콜드 브루', price : 5000, image: '/coffee_ori/바닐라 크림 콜드 브루.jpg'},
-          {id : 32, name : '제주 비자림 콜드 브루', price : 4000, image: '/coffee_ori/제주 비자림 콜드 브루.jpg'}, 
-          {id : 33, name : '코코넛 화이트 콜드 브루', price : 6000, image: '/coffee_ori/코코넛 화이트 콜드 브루.jpg'}, 
-          {id : 34, name : '콜드 브루 몰트', price : 5000, image: '/coffee_ori/콜드 브루 몰트.jpg'}, 
-          {id : 35, name : '콜드 브루 플로트', price : 6000, image: '/coffee_ori/콜드 브루 플로트.jpg'} 
+          {id : 27, name : '나이트로 바닐라 크림', price : 4000, image: '/public/coffee_ori/나이트로 바닐라 크림.jpg'},
+          {id : 28, name : '나이트로 쇼콜라 클라우드', price : 5000, image: '/public/coffee_ori/나이트로 쇼콜라 클라우드.jpg'},
+          {id : 29, name : '나이트로 콜드 브루', price : 8000, image: '/public/coffee_ori/나이트로 콜드 브루.jpg'},
+          {id : 30, name : '돌체 콜드 브루', price : 7000, image: '/public/coffee_ori/돌체 콜드 브루.jpg'},
+          {id : 31, name : '바닐라 크림 콜드 브루', price : 5000, image: '/public/coffee_ori/바닐라 크림 콜드 브루.jpg'},
+          {id : 32, name : '제주 비자림 콜드 브루', price : 4000, image: '/public/coffee_ori/제주 비자림 콜드 브루.jpg'}, 
+          {id : 33, name : '코코넛 화이트 콜드 브루', price : 6000, image: '/public/coffee_ori/코코넛 화이트 콜드 브루.jpg'}, 
+          {id : 34, name : '콜드 브루 몰트', price : 5000, image: '/public/coffee_ori/콜드 브루 몰트.jpg'}, 
+          {id : 35, name : '콜드 브루 플로트', price : 6000, image: '/public/coffee_ori/콜드 브루 플로트.jpg'} 
         ],
   },
   {
     id : 4,
     category : '티',
     menu : [
-        {id : 36, name : '그랜마 애플 블랙 밀크 티', price : 4000, image: '/coffee_ori/그랜마 애플 블랙 밀크 티.jpg'},
-        {id : 37, name : '그랜마 애플 블랙 티', price : 5000, image: '/coffee_ori/그랜마 애플 블랙 티.jpg'},
-        {id : 38, name : '돌체 블랙 밀크 티', price : 8000, image: '/coffee_ori/돌체 블랙 밀크 티.jpg'},
-        {id : 39, name : '라임 패션 티', price : 7000, image: '/coffee_ori/라임 패션 티.jpg'},
-        {id : 40, name : '말차 레모네이드 프로즌 티', price : 5000, image: '/coffee_ori/말차 레모네이드 프로즌 티.jpg'},
-        {id : 41, name : '민트 블렌드 티', price : 4000, image: '/coffee_ori/민트 블렌드 티.jpg'}, 
-        {id : 42, name : '아이스 그랜마 애플 블랙 밀크 티', price : 6000, image: '/coffee_ori/아이스 그랜마 애플 블랙 밀크 티.jpg'}, 
-        {id : 43, name : '아이스 그랜마 애플 블랙 티', price : 5000, image: '/coffee_ori/아이스 그랜마 애플 블랙 티.jpg'}, 
-        {id : 44, name : '아이스 돌체 블랙 밀크 티', price : 6000, image: '/coffee_ori/아이스 돌체 블랙 밀크 티.jpg'} 
+        {id : 36, name : '그랜마 애플 블랙 밀크 티', price : 4000, image: '/public/coffee_ori/그랜마 애플 블랙 밀크 티.jpg'},
+        {id : 37, name : '그랜마 애플 블랙 티', price : 5000, image: '/public/coffee_ori/그랜마 애플 블랙 티.jpg'},
+        {id : 38, name : '돌체 블랙 밀크 티', price : 8000, image: '/public/coffee_ori/돌체 블랙 밀크 티.jpg'},
+        {id : 39, name : '라임 패션 티', price : 7000, image: '/public/coffee_ori/라임 패션 티.jpg'},
+        {id : 40, name : '말차 레모네이드 프로즌 티', price : 5000, image: '/public/coffee_ori/말차 레모네이드 프로즌 티.jpg'},
+        {id : 41, name : '민트 블렌드 티', price : 4000, image: '/public/coffee_ori/민트 블렌드 티.jpg'}, 
+        {id : 42, name : '아이스 그랜마 애플 블랙 밀크 티', price : 6000, image: '/public/coffee_ori/아이스 그랜마 애플 블랙 밀크 티.jpg'}, 
+        {id : 43, name : '아이스 그랜마 애플 블랙 티', price : 5000, image: '/public/coffee_ori/아이스 그랜마 애플 블랙 티.jpg'}, 
+        {id : 44, name : '아이스 돌체 블랙 밀크 티', price : 6000, image: '/public/coffee_ori/아이스 돌체 블랙 밀크 티.jpg'} 
       ],
   },
   {
     id : 5,
     category : '프라푸치노',
     menu : [
-        // {id : 44, name : '모카 프라푸치노', price : 4000, image: '/coffee/프라푸치노/모카 프라푸치노.jpg'},
-        {id : 19, name : '바닐라 크림 프라푸치노', price : 5000, image: '/coffee_ori/바닐라 크림 프라푸치노.jpg'},
-        {id : 20, name : '블랙 와플칩 크림 프라푸치노', price : 8000, image: '/coffee_ori/블랙 와플칩 크림 프라푸치노.jpg'},
-        {id : 21, name : '에스프레소 프라푸치노', price : 7000, image: '/coffee_ori/에스프레소 프라푸치노.jpg'},
-        {id : 22, name : '이천 햅쌀 크림 프라푸치노', price : 5000, image: '/coffee_ori/이천 햅쌀 크림 프라푸치노.jpg'},
-        {id : 23, name : '이천 햅쌀 크림 프라푸치노', price : 4000, image: '/coffee_ori/이천 햅쌀 크림 프라푸치노.jpg'}, 
-        {id : 24, name : '자바 칩 프라푸치노', price : 6000, image: '/coffee_ori/자바 칩 프라푸치노.jpg'}, 
-        {id : 25, name : '제주 까망 크림 프라푸치노', price : 5000, image: '/coffee_ori/제주 까망 크림 프라푸치노.jpg'}, 
-        {id : 26, name : '제주 쑥떡 크림 프라푸치노', price : 6000, image: '/coffee_ori/제주 쑥떡 크림 프라푸치노.jpg'} 
+        // {id : 44, name : '모카 프라푸치노', price : 4000, image: '../coffee/프라푸치노/모카 프라푸치노.jpg'},
+        {id : 19, name : '바닐라 크림 프라푸치노', price : 5000, image: '/public/coffee_ori/바닐라 크림 프라푸치노.jpg'},
+        {id : 20, name : '블랙 와플칩 크림 프라푸치노', price : 8000, image: '/public/coffee_ori/블랙 와플칩 크림 프라푸치노.jpg'},
+        {id : 21, name : '에스프레소 프라푸치노', price : 7000, image: '/public/coffee_ori/에스프레소 프라푸치노.jpg'},
+        {id : 22, name : '이천 햅쌀 크림 프라푸치노', price : 5000, image: '/public/coffee_ori/이천 햅쌀 크림 프라푸치노.jpg'},
+        {id : 23, name : '이천 햅쌀 크림 프라푸치노', price : 4000, image: '/public/coffee_ori/이천 햅쌀 크림 프라푸치노.jpg'}, 
+        {id : 24, name : '자바 칩 프라푸치노', price : 6000, image: '/public/coffee_ori/자바 칩 프라푸치노.jpg'}, 
+        {id : 25, name : '제주 까망 크림 프라푸치노', price : 5000, image: '/public/coffee_ori/제주 까망 크림 프라푸치노.jpg'}, 
+        {id : 26, name : '제주 쑥떡 크림 프라푸치노', price : 6000, image: '/public/coffee_ori/제주 쑥떡 크림 프라푸치노.jpg'} 
       ],
   }
 ]
@@ -211,7 +211,6 @@ const PurchaseButton = props => {
     setIsOpen(false);
   }
  
-  let history = useHistory();
   const purchase = () => {
     if(props.cart.length === 0){
       alert("결제할 상품이 없습니다.");
@@ -220,11 +219,11 @@ const PurchaseButton = props => {
     }
 
     if(store.getState().userInfo === undefined){
-      history.push('/Result');
+    //   props.history.push('/Result');
       return;
     }
 
-    const url = 'http://52.79.161.164:8001/addOrderInfo/';
+    const url = '/whatneed/addOrderInfo/';
     const menu_info = [];
 
     for(var i=0; i<props.cart.length; i++){
@@ -243,8 +242,8 @@ const PurchaseButton = props => {
     };
     store.dispatch({type:'clear'});
     console.log("purchaseInfo", purchaseInfo);
-    history.push('/Result');
-    window.location.reload();
+    // props.history.push('/Result');
+    //window.location.reload();
     return post(url, JSON.stringify(purchaseInfo),config);
   }
     return (
@@ -259,9 +258,9 @@ const PurchaseButton = props => {
           <h2 >결제하시겠습니까?</h2>
 
             <Button color="primary" onClick={purchase}> 
-            {/* <Link to="/Result" style={{textDecoration : "none", color : "black"}}> */}
+            <Link to="/Result" style={{textDecoration : "none", color : "black"}}>
               예
-              {/* </Link> */}
+              </Link>
             </Button>
             <Button onClick={closeModal} style={{marginLeft: '60px'}}>아니오</Button>
 

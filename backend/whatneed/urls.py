@@ -22,8 +22,11 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     #path('api/v1/', include('accounts.urls')),
-    #path('', include('accounts.urls')),
+    path('whatneed/', include('accounts.urls')),
     path('foods/', include('foods.urls')),
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='accounts/index.html')),
+    
+    #path('Result/', Template)
+    #path('face_detection/', admin.site.urls),
 ]
