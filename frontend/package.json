@@ -10,7 +10,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "@vardius/react-user-media": "^1.0.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "npx": "^10.2.2",
     "react": "^16.13.1",
     "react-addons-update": "^15.6.2",
